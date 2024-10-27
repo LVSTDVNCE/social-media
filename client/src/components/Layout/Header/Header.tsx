@@ -33,7 +33,7 @@ const Header: React.FC = () => {
 	const profileMenu = (
 		<Menu>
 			<Menu.Item key='0'>
-				<Link to='/UserProfile'>Мой профиль</Link>
+				<Link to='/UserProfile/:id'>Мой профиль</Link>
 			</Menu.Item>
 			<Menu.Item key='1'>
 				<Link to='/'>Настройки</Link>
