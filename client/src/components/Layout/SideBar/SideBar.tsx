@@ -1,18 +1,10 @@
-// SideBar.tsx
 import React from 'react'
 import { Menu } from 'antd'
-import {
-	FileAddOutlined,
-	FileSearchOutlined,
-	HomeOutlined,
-	MessageOutlined,
-	UserOutlined,
-} from '@ant-design/icons'
 import { Link, useLocation } from 'react-router-dom'
+import { menu } from './dataSideBar'
 
 const { Item } = Menu
 
-// Стили для боковой панели
 const sidebarStyles: React.CSSProperties = {
 	marginLeft: 180,
 	width: 200,
@@ -34,21 +26,14 @@ const SideBar: React.FC = () => {
 			style={sidebarStyles}
 			defaultSelectedKeys={['/']}
 		>
-			<Item key='/UserProfile' icon={<UserOutlined />}>
-				<Link to='/UserProfile'>Профиль</Link>
-			</Item>
-			<Item key='/' icon={<HomeOutlined />}>
-				<Link to='/'>Новости</Link>
-			</Item>
-			<Item key='/Messenger' icon={<MessageOutlined />}>
-				<Link to='/Messenger'>Мессенджер</Link>
-			</Item>
-			<Item key='/NewPost' icon={<FileAddOutlined />}>
-				<Link to='/NewPost'>Создать пост</Link>
-			</Item>
-			<Item key='/SearchPage' icon={<FileSearchOutlined />}>
-				<Link to='/SearchPage'>Поиск постов</Link>
-			</Item>
+			{menu.map(item => (
+				<Item
+					key={item.link}
+					icon={item.icon ? React.createElement(item.icon) : null}
+				>
+					<Link to={item.link}>{item.title}</Link>
+				</Item>
+			))}
 		</Menu>
 	)
 }
