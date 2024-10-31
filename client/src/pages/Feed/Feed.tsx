@@ -56,6 +56,7 @@ const NewsFeed: React.FC = () => {
 				marginTop: '-64px',
 				paddingTop: '84px',
 				overflowY: 'auto',
+				width: '60%',
 			}}
 		>
 			<Row style={{ marginLeft: '120px' }}>
@@ -74,7 +75,6 @@ const NewsFeed: React.FC = () => {
 							style={{
 								textAlign: 'center',
 								marginTop: '20px',
-								width: '100vh',
 							}}
 						>
 							<Spin size='large' tip='Загрузка новостей...' />

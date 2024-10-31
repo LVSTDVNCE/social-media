@@ -13,6 +13,7 @@ const FeedItem: React.FC<FeedItemProps> = ({ title, content }) => (
 			marginBottom: '16px',
 			borderRadius: '8px',
 			boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+			width: '500px',
 		}}
 	>
 		<Space align='start'>
